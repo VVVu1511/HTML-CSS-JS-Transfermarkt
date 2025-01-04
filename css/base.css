@@ -1,0 +1,65 @@
+:root{
+    --blue: #62A3F0;
+    --gray: #f2f2f2;
+    --darkgray: #DDDDD1;
+    --darkblue: rgba(0,25,63,255);
+    --white: #ffffff;
+    --red: #D3334A;
+    --lightblue: #47ECE7;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+ul{
+    list-style: none;
+}
+
+.Transfermarkt{
+    display: flex;
+    width: 100%;
+    background-color: gray;
+}
+
+.content{
+    width: 68%;
+    background-color: rgba(233,233,233,255);
+}
+
+.content-header-searching{
+    height: 4rem;
+    padding: 0.7rem;
+    display: flex;
+    position: relative;
+}
+
+.content-header-lists{
+    height: 4.4rem;
+    background-color: rgba(0,25,63,255);
+}
+
+.content-header-categories{
+    height: 3rem;
+    background-color: rgba(255,255,255,255);
+    display: flex;
+    justify-content: left;
+    padding: 8px;
+}
+
+.advertisement-section{
+    height: 11rem;
+}
+
+.spotlight-section{
+    background-color: var(--white);
+}
+
+.advertisement{
+    width: 16%;
+    background-color: rgba(204,204,204,255);
+}
