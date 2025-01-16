@@ -12,16 +12,16 @@ function changeContentOfMostViewedPlayer(){
         preactive = active;
         if(active > 0) active = active - 1;
         
-        inforOfViewedSection[active].style.display = 'flex';
         inforOfViewedSection[preactive].style.display = 'none';
+        inforOfViewedSection[active].style.display = 'flex';
     });
 
     right.addEventListener('click',()=>{
         preactive = active;
         if(active < inforOfViewedSection.length - 1) active = active + 1;
     
-        inforOfViewedSection[active].style.display = 'flex';
         inforOfViewedSection[preactive].style.display = 'none';
+        inforOfViewedSection[active].style.display = 'flex';
     });
 
 }
@@ -97,6 +97,26 @@ function changeContentOfSpotlight(){
 
 }
 
+function changeColorOfBars(){
+    all_header_items = document.querySelectorAll('.content-header-lists-listitem');
+    all_header_items_bars = document.querySelectorAll('.content-header-lists-listitem-bar');
+
+    for(let i = all_header_items.length - 1; i > 0; i--){
+        all_header_items[i].addEventListener('mouseover',()=>{
+            all_header_items[0].style.color = 'white';
+            all_header_items_bars[0].style.display = 'none';
+            isItemHover = true;
+        });
+
+        all_header_items[i].addEventListener('mouseout',()=>{
+            all_header_items[0].style.color = '#62A3F0';
+            all_header_items_bars[0].style.display = 'block';
+        });
+    }
+}
+
+
+changeColorOfBars();
 setBlueBorderForHeaderSearch();
 changeContentOfSpotlight();
 changeContentOfMostViewedPlayer();
