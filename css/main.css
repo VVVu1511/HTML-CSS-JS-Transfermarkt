@@ -109,6 +109,27 @@
     background-color: #ffffff;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     border-radius: 5px;
+    z-index: 1000;
+    position: relative;
+}
+
+.content-header-searching-search-output{
+    display: block;
+    position: absolute;
+    top: 3.3rem;
+    width: 100%;
+    left: -0.1rem;
+}
+
+.content-header-searching-search-output div{
+    background-color: var(--white);
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    font-size: 2rem;
+}
+
+.content-header-searching-search-output div:hover{
+    background-color: var(--gray);
+    cursor: pointer;
 }
 
 .content-header-searching-search-text{

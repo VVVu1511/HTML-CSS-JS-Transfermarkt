@@ -1,5 +1,28 @@
 //set border for daddy search box
 
+const names = [
+    "Ethan",
+    "Liam",
+    "Alexander",
+    "Mateo",
+    "Sebastian",
+    "James",
+    "Benjamin",
+    "Caleb",
+    "Daniel",
+    "Lucas",
+    "Olivia",
+    "Emma",
+    "Sophia",
+    "Isabella",
+    "Mia",
+    "Ava",
+    "Amelia",
+    "Grace",
+    "Chloe",
+    "Harper"
+  ];
+  
 function changeContentOfMostViewedPlayer(){
     left = document.querySelector('.spotlight-section-lists-advertise--advertiseviewed---view .left-right .left');
     right = document.querySelector('.spotlight-section-lists-advertise--advertiseviewed---view .left-right .right');
@@ -115,11 +138,52 @@ function changeColorOfBars(){
     }
 }
 
+function searchFootballersByName(){
+    let search_box_text = document.querySelector('.content-header-searching-search-text');
+
+    search_box_text.addEventListener('input',()=>{
+        let input = search_box_text.value;
+        let search_list = document.querySelector('.content-header-searching-search-output');
+        
+        let search_list_items = search_list.querySelectorAll("div");
+
+        
+        if(input.length > 0){
+            for(let child of search_list_items){
+                if(input != child.textContent.substring(0,input)){
+                    search_list.removeChild(child);
+                }
+            }
+
+            console.log(input);
+            for(let i = 0; i < names.length; i++){
+                if(input == names[i].substring(0,input.length)){
+                    let new_nodes = document.createElement("div");
+                    new_nodes.textContent = names[i];
+                    search_list.appendChild(new_nodes);
+                }
+            }
+
+            if(search_list.childNodes.length == 0) search_list.style.display = 'none';
+            else search_list.style.display = 'block';
+        }
+
+        else{
+            for(let child of search_list_items){
+                search_list.removeChild(child);
+            }
+        }
+    });
+}
 
 changeColorOfBars();
 setBlueBorderForHeaderSearch();
 changeContentOfSpotlight();
 changeContentOfMostViewedPlayer();
+searchFootballersByName();
+
+
+
 
 
 
