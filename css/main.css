@@ -1,6 +1,6 @@
 @keyframes blindToClean{
     from{
-        opacity: 0%;
+        opacity: 70%;
     }
     to{
         opacity: 100%;
@@ -32,6 +32,16 @@
         width: 100%;
     }
 }
+
+@keyframes leftToRightAdvertiseList{
+    from{
+        width: 0%
+    }
+    to{
+        width: 100%;
+    }
+}
+
 
 .alert-message{
     display: none;
@@ -316,7 +326,7 @@
     padding: 0;
     position: relative;
     display: none;
-    animation: blindToClean 1s 1;
+    animation: blindToClean 1s 0.3;
 }
 
 #spotlight-section-lists-advertise--listitem-first{
@@ -443,7 +453,15 @@
     text-align: center;
     border: 1px solid var(--white);
     background-color: var(--darkblue);
+    color: var(--white);
+    font-size: 1.5rem;
 }
+
+.spotlight-section-lists-advertise--advertiseviewed---view .left-right .left:hover,
+.spotlight-section-lists-advertise--advertiseviewed---view .left-right .right:hover{
+    cursor: pointer;
+}
+
 
 .spotlight-section-lists-advertise--advertiseviewed---view .left-right .left{
     margin-right: 2px;
@@ -456,7 +474,6 @@
 .spotlight-section-lists-advertise--advertiseviewed---view .infor1{
     display: flex;
 }
-
 
 .spotlight-section-lists-advertise--advertiseviewed---view .infor img{
     width: 5rem;
@@ -571,6 +588,14 @@
     border: 2px solid var(--white);
 }
 
+.rating:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+.rating-active{
+    background-color: yellow;
+}
 
 
 

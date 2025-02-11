@@ -20,8 +20,14 @@ const names = [
     "Amelia",
     "Grace",
     "Chloe",
-    "Harper"
-  ];
+    "Harper",
+    "Ronaldo",
+    "Messi",
+    "Lamine Yamal",
+    "Kevin",
+    "Foden",
+    "Mohamed Salah"
+];
   
 function changeContentOfMostViewedPlayer(){
     left = document.querySelector('.spotlight-section-lists-advertise--advertiseviewed---view .left-right .left');
@@ -34,6 +40,8 @@ function changeContentOfMostViewedPlayer(){
     left.addEventListener('click',()=>{
         preactive = active;
         if(active > 0) active = active - 1;
+        else active = inforOfViewedSection.length - 1;
+       
         
         inforOfViewedSection[preactive].style.display = 'none';
         inforOfViewedSection[active].style.display = 'flex';
@@ -41,8 +49,10 @@ function changeContentOfMostViewedPlayer(){
 
     right.addEventListener('click',()=>{
         preactive = active;
+        
         if(active < inforOfViewedSection.length - 1) active = active + 1;
-    
+        else active = 0;
+        
         inforOfViewedSection[preactive].style.display = 'none';
         inforOfViewedSection[active].style.display = 'flex';
     });
@@ -98,6 +108,8 @@ function changeContentOfSpotlight(){
         listOfLeftArrows[i].addEventListener('click',()=>{
             preactive = active;
             if(active > 0) active = active - 1;
+            else active = listOfDots.length - 1;
+
             supportChangingContent(listOfDots,listOfSpotlightSection,preactive,active);
         });
     }
@@ -106,6 +118,8 @@ function changeContentOfSpotlight(){
         listOfRightArrows[j].addEventListener('click',()=>{
             preactive = active;
             if(active < listOfDots.length - 1) active = active + 1;
+            else active = 0;
+
             supportChangingContent(listOfDots,listOfSpotlightSection,preactive,active);
         });
     }
@@ -176,11 +190,30 @@ function searchFootballersByName(){
     });
 }
 
+function rating(){
+    let stars = document.querySelectorAll('.rating');
+
+    
+    for(let i = 0; i < stars.length; i++){
+        stars[i].addEventListener('click',()=>{
+            for(let j = 0; j < stars.length; j++){
+                if(j >= 0 && j <= i){
+                    if(!stars[j].classList.contains('rating-active')) stars[j].classList.add('rating-active');
+                }
+                else{
+                    if(stars[j].classList.contains('rating-active')) stars[j].classList.remove('rating-active');
+                }
+            }
+        });
+    }
+}
+
 changeColorOfBars();
 setBlueBorderForHeaderSearch();
 changeContentOfSpotlight();
 changeContentOfMostViewedPlayer();
 searchFootballersByName();
+rating();
 
 
 
